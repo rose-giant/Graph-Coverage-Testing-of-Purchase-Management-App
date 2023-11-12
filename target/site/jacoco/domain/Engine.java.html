@@ -14,7 +14,7 @@ public class Engine {
 <span class="fc" id="L14">        var count = 0;</span>
 
 <span class="fc bfc" id="L16" title="All 2 branches covered.">        for (Order oldOrder : orderHistory) {</span>
-<span class="pc bpc" id="L17" title="1 of 2 branches missed.">            if (oldOrder.customer == customer) {</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">            if (oldOrder.customer == customer) {</span>
 <span class="fc" id="L18">                sum += oldOrder.quantity;</span>
 <span class="fc" id="L19">                count++;</span>
             }
@@ -47,7 +47,7 @@ public class Engine {
 <span class="fc bfc" id="L47" title="All 2 branches covered.">            if (diff == 0) {</span>
 <span class="fc" id="L48">                diff = currentOrder.quantity - previous.quantity;</span>
 <span class="fc" id="L49">                previous = currentOrder;</span>
-<span class="pc bpc" id="L50" title="1 of 2 branches missed.">            } else if (diff != currentOrder.quantity - previous.quantity) {</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">            } else if (diff != currentOrder.quantity - previous.quantity) {</span>
 <span class="fc" id="L51">                return 0;</span>
             }
 <span class="fc" id="L53">        }</span>

@@ -41,6 +41,17 @@ public class EngineTest {
     }
 
     @Test
+    public void getAverageOrderQuantityByCustomerReturnsAvgWithNotSeenCustomer() {
+        mockOrder1.setCustomer(2);
+        mockOrder2.setCustomer(1);
+        mockOrder1.setQuantity(4);
+        mockOrder2.setQuantity(10);
+        mockEngine.orderHistory.add(mockOrder1);
+        mockEngine.orderHistory.add(mockOrder2);
+        assertEquals(4, mockEngine.getAverageOrderQuantityByCustomer(2));
+    }
+
+    @Test
     public void getAverageOrderQuantityByCustomerReturns12With1MockOrderAndSameCustomerForTheOrderAndInput() {
         mockOrder1.customer = 8;
         mockOrder1.quantity = 12;
@@ -111,6 +122,23 @@ public class EngineTest {
         mockEngine.orderHistory.add(mockOrder2);
         mockEngine.orderHistory.add(mockOrder3);
         assertEquals(0 , mockEngine.getQuantityPatternByPrice(9));
+    }
+
+    @Test
+    public void getQuantityPatternByPriceReturnsDiffAmountWith3MockOrdersAndSameDiffBetweenOrdersAndInput() {
+        mockOrder1.quantity = 7;
+        mockOrder2.quantity = 17;
+        mockOrder3.quantity = 27;
+        mockOrder1.price = 9;
+        mockOrder2.price = 9;
+        mockOrder3.price = 9;
+        mockOrder1.id = 1;
+        mockOrder2.id = 2;
+        mockOrder3.id = 3;
+        mockEngine.orderHistory.add(mockOrder1);
+        mockEngine.orderHistory.add(mockOrder2);
+        mockEngine.orderHistory.add(mockOrder3);
+        assertEquals(10 , mockEngine.getQuantityPatternByPrice(9));
     }
 
     @Test

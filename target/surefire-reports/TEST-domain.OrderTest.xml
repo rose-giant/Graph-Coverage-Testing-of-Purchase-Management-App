@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="domain.OrderTest" time="0.002" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="domain.OrderTest" time="0.009" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="19"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
-    <property name="sun.java.command" value="C:\Users\Fateme\AppData\Local\Temp\surefire8840617140867074719\surefirebooter-20231110200008775_3.jar C:\Users\Fateme\AppData\Local\Temp\surefire8840617140867074719 2023-11-10T20-00-08_519-jvmRun1 surefire-20231110200008775_1tmp surefire_0-20231110200008775_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Fateme\AppData\Local\Temp\surefire5681293649626196505\surefirebooter-20231112201132947_3.jar C:\Users\Fateme\AppData\Local\Temp\surefire5681293649626196505 2023-11-12T20-11-32_650-jvmRun1 surefire-20231112201132947_1tmp surefire_0-20231112201132947_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Fateme\Desktop\software-testing\ca3\Graph-Coverage-Testing-of-Purchase-Management-App-main\target\test-classes;C:\Users\Fateme\Desktop\software-testing\ca3\Graph-Coverage-Testing-of-Purchase-Management-App-main\target\classes;C:\Users\Fateme\.m2\repository\org\projectlombok\lombok\1.18.26\lombok-1.18.26.jar;C:\Users\Fateme\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Fateme\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Fateme\AppData\Local\Temp\surefire8840617140867074719\surefirebooter-20231110200008775_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Fateme\AppData\Local\Temp\surefire5681293649626196505\surefirebooter-20231112201132947_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="19.0.2+7-44"/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="63.0"/>
   </properties>
-  <testcase name="getPriceTest" classname="domain.OrderTest" time="0.0"/>
+  <testcase name="getPriceTest" classname="domain.OrderTest" time="0.001"/>
   <testcase name="getCustomerTest" classname="domain.OrderTest" time="0.0"/>
   <testcase name="getQuantityTest" classname="domain.OrderTest" time="0.0"/>
   <testcase name="OrderIdNotEquals" classname="domain.OrderTest" time="0.0"/>
