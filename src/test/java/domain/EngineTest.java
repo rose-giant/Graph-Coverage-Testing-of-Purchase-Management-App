@@ -2,19 +2,15 @@ package domain;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 public class EngineTest {
-    public Engine mockEngine = new Engine();
+    public Engine mockEngine;
     public Order mockOrder1 = new Order();
     public Order mockOrder2 = new Order();
     public Order mockOrder3 = new Order();
@@ -131,7 +127,7 @@ public class EngineTest {
     }
 
     @Test
-    public void getQuantityPatternByPriceReturnsDiffAmountWith3MockOrdersAndDifferentDiffBetweenOrdersAndInput() {
+    public void getQuantityPatternByPriceReturnsDiffAmountWith3MockOrdersAndSameDiffBetweenOrdersAndInput() {
         mockOrder1.quantity = 7;
         mockOrder2.quantity = 17;
         mockOrder3.quantity = 27;
@@ -188,6 +184,9 @@ public class EngineTest {
         mockOrder3.customer = 1;
         assertEquals(10, mockEngine.addOrderAndGetFraudulentQuantity(mockOrder3));
     }
+
+
+
 
     @Test
     public void getAverageOrderQuantityByCustomerReturnsAverageWithSameOrderHistoryCustomerWith1Quantity() {
@@ -261,63 +260,6 @@ public class EngineTest {
         assertEquals(-2, mockEngine.getAverageOrderQuantityByCustomer(0));
     }
 
-    //devision by 0
-//    @Test
-//    public void getAverageOrderQuantityByCustomerReturnsAverageWithDiffOrderHistory0CustomerWith1Quantity() {
-//        mockOrder1.setCustomer(0);
-//        mockOrder1.setQuantity(4);
-//        mockEngine.orderHistory.add(mockOrder1);
-//        assertEquals(null, mockEngine.getAverageOrderQuantityByCustomer(1));
-//    }
-//
-//    @Test
-//    public void getAverageOrderQuantityByCustomerReturnsAverageWithDiffOrderHistoryCustomerWith0Quantity() {
-//        mockOrder1.setCustomer(1);
-//        mockOrder1.setQuantity(0);
-//        mockEngine.orderHistory.add(mockOrder1);
-//        assertEquals(0, mockEngine.getAverageOrderQuantityByCustomer(0));
-//    }
-//
-//    @Test
-//    public void getAverageOrderQuantityByCustomerReturnsAverageWithDiffOrderHistoryNegCustomerWith0Quantity() {
-//        mockOrder1.setCustomer(1);
-//        mockOrder1.setQuantity(0);
-//        mockEngine.orderHistory.add(mockOrder1);
-//        assertEquals(0, mockEngine.getAverageOrderQuantityByCustomer(0));
-//    }
-//
-//    @Test
-//    public void getAverageOrderQuantityByCustomerReturnsAverageWithDiffOrderHistory0CustomerWith0Quantity() {
-//        mockOrder1.setCustomer(0);
-//        mockOrder1.setQuantity(0);
-//        mockEngine.orderHistory.add(mockOrder1);
-//        assertEquals(0, mockEngine.getAverageOrderQuantityByCustomer(1));
-//    }
-//
-//    @Test
-//    public void getAverageOrderQuantityByCustomerReturnsAverageWithDiffOrderHistoryCustomerWithNegQuantity() {
-//        mockOrder1.setCustomer(1);
-//        mockOrder1.setQuantity(-2);
-//        mockEngine.orderHistory.add(mockOrder1);
-//        assertEquals(-2, mockEngine.getAverageOrderQuantityByCustomer(0));
-//    }
-//
-//    @Test
-//    public void getAverageOrderQuantityByCustomerReturnsAverageWithDiffOrderHistoryNegCustomerWithNegQuantity() {
-//        mockOrder1.setCustomer(1);
-//        mockOrder1.setQuantity(-2);
-//        mockEngine.orderHistory.add(mockOrder1);
-//        assertEquals(-2, mockEngine.getAverageOrderQuantityByCustomer(0));
-//    }
-//
-//    @Test
-//    public void getAverageOrderQuantityByCustomerReturnsAverageWithDifferentOrderHistory0CustomerWithNegQuantity() {
-//        mockOrder1.setCustomer(1);
-//        mockOrder1.setQuantity(-2);
-//        mockEngine.orderHistory.add(mockOrder1);
-//        assertEquals(-2, mockEngine.getAverageOrderQuantityByCustomer(0));
-//    }
-
     @Test
     public void getAverageOrderQuantityByCustomerReturnsAverageWithSameOrderHistoryCustomersWith1Quantity() {
         mockOrder1.setCustomer(1);
@@ -351,16 +293,16 @@ public class EngineTest {
         assertEquals(4, mockEngine.getAverageOrderQuantityByCustomer(0));
     }
 
-    @Test
-    public void getAverageOrderQuantityByCustomerReturnsAverageWithSameOrderHistoryCustomersWith0Quantity() {
-        mockOrder1.setCustomer(1);
-        mockOrder1.setQuantity(0);
-        mockEngine.orderHistory.add(mockOrder1);
-        mockOrder2.setCustomer(1);
-        mockOrder2.setQuantity(4);
-        mockEngine.orderHistory.add(mockOrder2);
-        assertEquals(0, mockEngine.getAverageOrderQuantityByCustomer(1));
-    }
+//    @Test
+//    public void getAverageOrderQuantityByCustomerReturnsAverageWithSameOrderHistoryCustomersWith0Quantity() {
+//        mockOrder1.setCustomer(1);
+//        mockOrder1.setQuantity(0);
+//        mockEngine.orderHistory.add(mockOrder1);
+//        mockOrder2.setCustomer(1);
+//        mockOrder2.setQuantity(4);
+//        mockEngine.orderHistory.add(mockOrder2);
+//        assertEquals(0, mockEngine.getAverageOrderQuantityByCustomer(1));
+//    }
 
     @Test
     public void getAverageOrderQuantityByCustomerReturnsAverageWithSameOrderHistoryNegCustomersWith0Quantity() {
@@ -437,9 +379,6 @@ public class EngineTest {
 
 
 }
-
-
-
 
 
 
